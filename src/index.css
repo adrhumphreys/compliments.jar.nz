@@ -10,11 +10,6 @@
   box-sizing: content-box;
 }
 
-html {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-}
-
 body {
   font-family: "Source Serif Pro", serif;
   font-family: "Space Mono", monospace;
@@ -25,8 +20,6 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center calc(100% - 120px);
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
 }
 
 input {
@@ -53,18 +46,30 @@ input::selection {
   max-width: 768px;
   margin-left: auto;
   margin-right: auto;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+.quote {
+  flex: 1;
+  padding-top: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 h1 {
   color: var(--dark-blue);
   font-family: "Source Serif Pro", serif;
   font-weight: 600;
-  padding: 50px 20px 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
   font-size: 22px;
   flex: 1;
   margin: 0;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 p {
@@ -86,7 +91,6 @@ p a {
   border: 0;
   background: var(--yellow);
   font-family: var(--space-mono);
-  width: 100%;
   font-size: 16px;
 }
 

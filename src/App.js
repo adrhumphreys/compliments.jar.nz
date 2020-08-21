@@ -15,18 +15,20 @@ function App() {
 
   return (
     <div className="app">
-      <h1>
-        <input
-          type="text"
-          value={name}
-          style={{
-            width: name.length + "ch",
-            minWidth: "4ch",
-          }}
-          onChange={updateName}
-        />
-        {line}
-      </h1>
+      <div className="quote">
+        <h1>
+          <input
+            type="text"
+            value={name}
+            style={{
+              width: name.length + "ch",
+              minWidth: "4ch",
+            }}
+            onChange={updateName}
+          />
+          {line}
+        </h1>
+      </div>
       <p>
         Made with love by{" "}
         <a href="//blog.jar.nz" rel="noopener noreferrer" target="_blank">
