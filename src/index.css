@@ -1,47 +1,147 @@
+:root {
+  --dark-blue: #0034ff;
+  --yellow: #ffe700;
+  --light-yellow: #fcf4a3;
+  --gray: #767676;
+  --space-mono: "Space Mono", monospace;
+}
+
+* {
+  box-sizing: content-box;
+}
+
+html {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
 body {
+  font-family: "Source Serif Pro", serif;
+  font-family: "Space Mono", monospace;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: mediumslateblue;
+  background-image: url("hills-sm.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center calc(100% - 120px);
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+input {
+  border: none;
+  background-color: var(--yellow);
+  color: var(--dark-blue);
+  font-family: "Source Serif Pro", serif;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 3px 2px 3px 6px;
 }
 
-.app {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+input:focus {
+  outline: none;
 }
 
-.app h1 {
-  padding: 20px;
-}
-
-.refresh-button {
-  height: 50px;
-  width: 50px;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  border: 0;
+input::selection {
   background: none;
 }
 
-.refresh-button svg {
-  width: 40px;
-  height: 40px;
+.app {
+  display: flex;
+  flex-direction: column;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 h1 {
-  background: white;
-  border: 3px solid #333;
-  border-radius: 5px;
-  margin-right: 200px;
-  margin-top: 300px;
+  color: var(--dark-blue);
+  font-family: "Source Serif Pro", serif;
+  font-weight: 600;
+  padding: 50px 20px 20px;
+  font-size: 22px;
+  flex: 1;
+  margin: 0;
+}
+
+p {
+  color: var(--gray);
+  font-family: var(--space-mono);
+  text-align: center;
+}
+
+p a {
+  color: var(--gray);
+}
+
+.refresh-button {
+  display: flex;
+  color: var(--dark-blue);
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border: 0;
+  background: var(--yellow);
+  font-family: var(--space-mono);
+  width: 100%;
+  font-size: 16px;
+}
+
+.refresh-button:focus {
+  outline: none;
+}
+
+.refresh-button:active {
+  background-color: var(--light-yellow);
+  outline: none;
+}
+
+.refresh-button svg {
+  height: 40px;
+  margin-left: 14px;
+  width: 40px;
+  fill: var(--dark-blue);
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("hills.svg");
+    background-position: center calc(100% - 40px);
+  }
+
+  .refresh-button {
+    background: none;
+    font-size: 18px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: auto;
+  }
+
+  .refresh-button svg {
+    background-color: var(--yellow);
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .refresh-button:hover {
+    text-decoration: underline;
+  }
+
+  p br {
+    display: none;
+  }
+
+  h1 {
+    font-size: 28px;
+    padding-top: 160px;
+  }
+
+  input {
+    font-size: 28px;
+  }
 }

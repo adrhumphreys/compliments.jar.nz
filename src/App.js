@@ -2,16 +2,49 @@ import React, { useState, useEffect } from "react";
 import getLine from "./lines";
 
 function App() {
-  let [name, setName] = useState("Kelly");
+  let [name, setName] = useState("Adrian");
   let [line, setLine] = useState(null);
 
-  useEffect(() => setLine(getLine(name)), []);
-  const refresh = () => setLine(getLine(name));
+  useEffect(() => setLine(getLine()), []);
+
+  const refresh = () => setLine(getLine());
+
+  const updateName = (evt) => {
+    setName(evt.target.value);
+  };
 
   return (
     <div className="app">
-      <h1>{line}</h1>
+      <h1>
+        <input
+          type="text"
+          value={name}
+          style={{
+            width: name.length + "ch",
+            minWidth: "4ch",
+          }}
+          onChange={updateName}
+        />
+        {line}
+      </h1>
+      <p>
+        Made with love by{" "}
+        <a href="//blog.jar.nz" rel="noopener noreferrer" target="_blank">
+          Adrian
+        </a>
+        . <br />
+        Inspired by{" "}
+        <a
+          href="https://gimletmedia.com/shows/reply-all"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Reply All
+        </a>
+        .
+      </p>
       <button className="refresh-button" onClick={refresh}>
+        Generate new
         <svg
           width="1em"
           height="1em"
