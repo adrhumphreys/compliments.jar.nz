@@ -5,12 +5,26 @@ function App() {
   let [name, setName] = useState("Adrian");
   let [line, setLine] = useState(null);
 
-  useEffect(() => setLine(getLine()), []);
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    if (searchParams.get("name")) {
+      setName(searchParams.get("name"));
+    }
+
+    setLine(getLine());
+  }, []);
 
   const refresh = () => setLine(getLine());
 
   const updateName = (evt) => {
     setName(evt.target.value);
+  };
+
+  const updateNameURL = () => {
+    var searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("name", name);
+    window.location.search = searchParams.toString();
   };
 
   return (
@@ -25,6 +39,7 @@ function App() {
               minWidth: "4ch",
             }}
             onChange={updateName}
+            onBlur={updateNameURL}
           />
           {line}
         </h1>
