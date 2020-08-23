@@ -99,8 +99,8 @@ p a {
 }
 
 .refresh-button:active {
-  background-color: var(--light-yellow);
   outline: none;
+  text-decoration: underline;
 }
 
 .refresh-button svg {

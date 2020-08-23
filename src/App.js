@@ -40,6 +40,9 @@ function App() {
             }}
             onChange={updateName}
             onBlur={updateNameURL}
+            spellcheck="false"
+            autocomplete="off"
+            autocorrect="off"
           />
           {line}
         </h1>
