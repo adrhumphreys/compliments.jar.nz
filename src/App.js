@@ -48,7 +48,7 @@ function App() {
         </h1>
       </div>
       <p>
-        Made with love by{" "}
+        Made with love, I guess, by{" "}
         <a href="//blog.jar.nz" rel="noopener noreferrer" target="_blank">
           Adrian
         </a>
